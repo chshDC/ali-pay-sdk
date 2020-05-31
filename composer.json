@@ -2,6 +2,7 @@
   "name": "jcbbhe/alipay",
   "type": "library",
   "description": "Ali pay sdk",
+  "license": "MIT",
   "keywords": [
     "php",
     "alipay",
