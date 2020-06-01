@@ -3,6 +3,7 @@
   "type": "library",
   "description": "Ali pay sdk",
   "license": "MIT",
+  "version": "1.0.0",
   "keywords": [
     "php",
     "alipay",
