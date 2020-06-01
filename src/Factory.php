@@ -9,13 +9,16 @@ use AliPay\Bean\Config;
 class Factory
 {
 
-    static public Config $config;
+    /**
+     * @var Config
+     */
+    static public $config;
 
     static function exec(BaseContent $baseContent)
     {
-        $baseContent->app_id = $config->appId;
+        $baseContent->app_id = self::$config->appId;
         $data = $baseContent->result();
-        $data['sign'] = Sign::exec($data, $config->privateKey);
+        $data['sign'] = Sign::exec($data, self::$config->privateKey);
 
         dump($data);
     }
