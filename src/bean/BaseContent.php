@@ -25,13 +25,7 @@ class BaseContent
     {
         $data = json_decode(json_encode($this), true);
         $data['biz_content'] = json_encode($data['biz_content']);
-//        $bizContent = json_encode($bizContent);
-//        $common->biz_content = $bizContent;
-//
-//        $commonData = json_decode(json_encode($bizContent), true);
-        ksort($commonData);
-        $data = http_build_query($commonData);
-        $data = urldecode($data);
+        ksort($data);
         return $data;
     }
 

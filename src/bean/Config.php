@@ -12,8 +12,9 @@ class Config
     public $aliPublicKey;
     public $protocol;
     public $gatewayHost;
-//    public $alipayPublicKey;
-//    public $merchantPrivateKey;
-//    public $notifyUrl;
-//    public $encryptKey;
+
+    public function getHost()
+    {
+        return $this->protocol . "://" . $this->gatewayHost . '/gateway.do';
+    }
 }

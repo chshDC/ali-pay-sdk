@@ -3,7 +3,7 @@
   "type": "library",
   "description": "Ali pay sdk",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "keywords": [
     "php",
     "alipay",
@@ -12,15 +12,22 @@
   "authors": [
     {
       "name": "Wahaha",
-      "role": "Developer, maintainer"
+      "role": "Developer, maintainer",
+      "email": "jcbbhe@163.com"
     }
   ],
   "require": {
-    "php": ">=5.3"
+    "php": ">=5.3",
+    "ext-json": "*",
+    "ext-openssl": "*",
+    "ext-curl": "*"
   },
   "autoload": {
     "psr-4": {
       "AliPay\\": "src/"
     }
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^5.1"
   }
 }
