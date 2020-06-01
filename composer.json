@@ -20,7 +20,9 @@
     "php": ">=5.3",
     "ext-json": "*",
     "ext-openssl": "*",
-    "ext-curl": "*"
+    "ext-curl": "*",
+    "ext-iconv": "*",
+    "ext-bcmath": "*"
   },
   "autoload": {
     "psr-4": {

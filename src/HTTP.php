@@ -49,7 +49,9 @@ class HTTP
                 throw new \Exception('get 请求，参数应为数组或HTTP query字符串！');
             }
         }
+//        dump($url);
         curl_setopt(self::$curl, CURLOPT_URL, $url);
+        curl_setopt(self::$curl, CURLOPT_CUSTOMREQUEST, 'GET');
         if (!empty($header)) {
             curl_setopt(self::$curl, CURLOPT_HTTPHEADER, $header);
         }

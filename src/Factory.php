@@ -25,8 +25,11 @@ class Factory
         $data = $baseContent->result();
         $data['sign'] = Sign::exec($data, self::$config->privateKey);
 
+
         $result = HTTP::getInstance()->get(self::$config->getHost(), $data);
-        $verifyData = $result['alipay_trade_query_response'];
+        $dataKey = $baseContent->method . '.response';
+        $dataKey = str_replace('.', '_', $dataKey);
+        $verifyData = $result[$dataKey];
         $verifyStr = json_encode($verifyData);
         $sign = $result['sign'];
         $verifyResult = Sign::verify($verifyStr, $sign, self::$config->aliPublicKey);
@@ -35,5 +38,23 @@ class Factory
         } else {
             throw new \Exception('验签失败，数据并非来自支付宝，请注意！');
         }
+    }
+
+    static function create(BaseContent $baseContent)
+    {
+        $baseContent->app_id = self::$config->appId;
+        $data = $baseContent->result();
+        $data['sign'] = Sign::exec($data, self::$config->privateKey);
+
+        return self::$config->getHost() . '?' . http_build_query($data);
+//        if (!empty($data)) {
+//            if (is_array($data)) {
+//                $url .= '?' . http_build_query($data);
+//            } else if (is_string($data)) {
+//                $url .= '?' . $data;
+//            } else {
+//                throw new \Exception('get 请求，参数应为数组或HTTP query字符串！');
+//            }
+//        }
     }
 }
