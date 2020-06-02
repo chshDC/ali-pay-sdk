@@ -1,7 +1,7 @@
 <?php
 
 
-namespace AliPay\Bean;
+namespace AliPay;
 
 
 class Config

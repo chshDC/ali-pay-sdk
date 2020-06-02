@@ -1,5 +1,5 @@
 .idea
 vendor
 composer.lock
-demo/function.php
+samples/function.php
 .DS_Store
