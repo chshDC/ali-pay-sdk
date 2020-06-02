@@ -25,7 +25,7 @@
   },
   "autoload": {
     "psr-4": {
-      "AliPay\\": "src/"
+      "AliPay\\": "src/AliPay"
     }
   },
   "require-dev": {
